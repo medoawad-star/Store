@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/">Home</a>
+  <a href="/cart">Cart</a>
+  <a href="/dashboard">Dashboard</a>
+  <a href="/logout">Logout</a>
+</nav>
+
+<h2 style="text-align:center;">📊 Dashboard</h2>
+
+<!-- USERS -->
+<h3 style="text-align:center;">Users</h3>
+
+<table>
+  <tr>
+    <th>ID</th><th>Name</th><th>Email</th>
+  </tr>
+
+  {% for u in users %}
+  <tr>
+    <td>{{ u[0] }}</td>
+    <td>{{ u[1] }}</td>
+    <td>{{ u[2] }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<br>
+
+<!-- ADD PRODUCT -->
+<h3 style="text-align:center;">Add Product</h3>
+
+<form action="/add_product" method="POST" enctype="multipart/form-data" style="text-align:center;">
+  <input name="name" placeholder="Name" required>
+  <input name="price" placeholder="Price" required>
+  <input type="file" name="image" required>
+  <button>Add</button>
+</form>
+
+<br>
+
+<!-- PRODUCTS -->
+<h3 style="text-align:center;">Products</h3>
+
+<table>
+  <tr>
+    <th>ID</th><th>Name</th><th>Price</th><th>Actions</th>
+  </tr>
+
+  {% for p in products %}
+  <tr>
+    <td>{{ p[0] }}</td>
+    <td>{{ p[1] }}</td>
+    <td>{{ p[2] }}</td>
+    <td>
+      <a href="/edit/{{ p[0] }}">Edit</a> |
+      <a href="/delete/{{ p[0] }}">Delete</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>

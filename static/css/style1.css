@@ -1,0 +1,167 @@
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f2f4f7;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  background: #007bff;
+  padding: 12px;
+  text-align: center;
+}
+
+.navbar a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: yellow;
+}
+
+/* ================= LOGIN / SIGNUP ================= */
+.container {
+  width: 350px;
+  background: #fff;
+  margin: 100px auto;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.container input:focus {
+  border-color: #007bff;
+}
+
+.container button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.container button:hover {
+  background: #0056b3;
+}
+
+.container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* ================= PRODUCTS (HOME + CART) ================= */
+.products {
+  padding: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* PRODUCT CARD */
+.product {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+  /* مهم جدًا */
+  width: 220px;
+  margin: auto;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+/* IMAGE FIX (المهم جدًا) */
+.product img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* TEXT */
+.product h4 {
+  margin: 10px 0;
+}
+
+.product p {
+  color: green;
+  font-weight: bold;
+}
+
+/* BUTTON */
+.product button {
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%;
+  background: #ff9900;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.product button:hover {
+  background: #e68a00;
+}
+
+/* ================= DASHBOARD TABLE ================= */
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background: #007bff;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+  background: #f2f4f7;
+  transition: 0.3s;
+}

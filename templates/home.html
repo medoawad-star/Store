@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/">Home</a>
+  <a href="/cart">Cart</a>
+  <a href="/dashboard">Dashboard</a>
+  <a href="/logout">Logout</a>
+</nav>
+
+<h2 style="text-align:center;">Welcome {{ user }}</h2>
+
+<!-- SEARCH -->
+<form action="/search" method="GET" style="text-align:center; margin:20px;">
+  <input type="text" name="q" placeholder="Search products..." required>
+  <button>Search</button>
+</form>
+
+<section class="products">
+
+{% for p in products %}
+  <div class="product">
+
+    <img src="{{ url_for('static', filename='images/' + p[3]) }}">
+
+    <h4>{{ p[1] }}</h4>
+    <p>{{ p[2] }} EGP</p>
+
+    <a href="/add/{{ p[0] }}">
+      <button>Add to Cart</button>
+    </a>
+
+  </div>
+{% endfor %}
+
+</section>
+
+</body>
+</html>
